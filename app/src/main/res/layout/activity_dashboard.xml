@@ -4,11 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/baground"
+    android:orientation="vertical"
     tools:context=".Dashboard">
     
     <com.synnapps.carouselview.CarouselView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="250dp"
         app:pageColor="#00000000"
         app:fillColor="#FFFFFFFF"
         app:slideInterval="3000"
@@ -18,4 +20,234 @@
         android:id="@+id/carousel">
     </com.synnapps.carouselview.CarouselView>
 
+    <LinearLayout
+        android:layout_marginTop="255dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--layout button atas-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="25dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <Button
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="110dp"
+                            android:layout_height="110dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/custom_button"
+                            android:drawableTop="@drawable/ic_import_contacts_black_24dp"
+                            android:indeterminate="false"
+                            android:padding="5dp"
+                            android:text="Portofolio Berbasis Talent Mapping"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10dp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <Button
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="110dp"
+                            android:layout_height="110dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/custom_button"
+                            android:drawableTop="@drawable/ic_book_black_24dp"
+                            android:indeterminate="false"
+                            android:padding="13dp"
+                            android:text="Jurnal Kegiatan"
+                            android:textSize="10dp"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <Button
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="110dp"
+                            android:layout_height="110dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/custom_button"
+                            android:drawableTop="@drawable/ic_event_note_black_24dp"
+                            android:indeterminate="false"
+                            android:padding="13dp"
+                            android:text="Agenda Kegiatan"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10dp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10pt"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <Button
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="110dp"
+                            android:layout_height="110dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/custom_button"
+                            android:drawableTop="@drawable/ic_recent_actors_black_24dp"
+                            android:indeterminate="false"
+                            android:padding="13dp"
+                            android:text="Profil Identitas"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10dp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <Button
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="110dp"
+                            android:layout_height="110dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/custom_button"
+                            android:drawableTop="@drawable/ic_photo_library_black_24dp"
+                            android:indeterminate="false"
+                            android:padding="13dp"
+                            android:text="Dokumentasi Kegiatan"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10dp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <Button
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="110dp"
+                            android:layout_height="110dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/custom_button"
+                            android:drawableTop="@drawable/ic_people_black_24dp"
+                            android:indeterminate="false"
+                            android:onClick="Kontak"
+                            android:padding="13dp"
+                            android:text="Kontak Kami"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10dp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>

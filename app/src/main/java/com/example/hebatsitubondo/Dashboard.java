@@ -1,7 +1,9 @@
 package com.example.hebatsitubondo;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -37,5 +39,10 @@ public class Dashboard extends AppCompatActivity {
                 Toast.makeText(Dashboard.this, mImageTitle[position], Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    public void Kontak(View view) {
+        Intent intent = new Intent(Dashboard.this, KontakKami.class);
+        startActivity(intent);
     }
 }
