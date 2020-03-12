@@ -45,4 +45,9 @@ public class Dashboard extends AppCompatActivity {
         Intent intent = new Intent(Dashboard.this, KontakKami.class);
         startActivity(intent);
     }
+
+    public void Portofolio(View view) {
+        Intent intent = new Intent(Dashboard.this, Portofolio.class);
+        startActivity(intent);
+    }
 }
