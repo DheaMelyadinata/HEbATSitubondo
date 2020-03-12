@@ -32,7 +32,7 @@
                     android:id="@+id/editUsername"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/ic_person_black_24dp"
+                    android:drawableLeft="@drawable/ic_person_24dp"
                     android:hint="Username"
                     android:inputType="textPersonName"
                     android:textColor="#FFFFFF"
@@ -79,7 +79,8 @@
                 android:text="Daftar"
                 android:textAllCaps="false"
                 android:textColor="#fff"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:onClick="Register"/>
 
             <TextView
                 android:layout_width="wrap_content"
