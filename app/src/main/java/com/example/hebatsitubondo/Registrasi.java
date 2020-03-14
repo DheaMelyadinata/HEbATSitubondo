@@ -1,7 +1,9 @@
 package com.example.hebatsitubondo;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 public class Registrasi extends AppCompatActivity {
 
@@ -9,5 +11,11 @@ public class Registrasi extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrasi);
+    }
+
+
+    public void Register(View view) {
+        Intent intent = new Intent(Registrasi.this, Dashboard.class);
+        startActivity(intent);
     }
 }
