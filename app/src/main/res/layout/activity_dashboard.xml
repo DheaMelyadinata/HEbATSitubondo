@@ -96,7 +96,8 @@
                             android:text="Jurnal Kegiatan"
                             android:textSize="10dp"
                             android:textColor="#FFFFFF"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:onClick="Akegiatan"/>
                     </RelativeLayout>
                 </LinearLayout>
             </LinearLayout>
