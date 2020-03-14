@@ -32,7 +32,13 @@ public class Portofolio extends AppCompatActivity {
         tema.add(new TemaPortofolioTM("Tema 3", "Kerajinan", R.drawable.tema3));
         tema.add(new TemaPortofolioTM("Tema 4", "Kuliner/Boga", R.drawable.tema4));
         tema.add(new TemaPortofolioTM("Tema 5", "Transportasi", R.drawable.tema5));
-
+        tema.add(new TemaPortofolioTM("Tema 6", "Pariwisata", R.drawable.tema6));
+        tema.add(new TemaPortofolioTM("Tema 7", "Lokomotif", R.drawable.tema7));
+        tema.add(new TemaPortofolioTM("Tema 8", "Elektronik", R.drawable.tema8));
+        tema.add(new TemaPortofolioTM("Tema 9", "Telekomunikasi", R.drawable.tema9));
+        tema.add(new TemaPortofolioTM("Tema 10", "Astronomi", R.drawable.tema10));
+        tema.add(new TemaPortofolioTM("Tema 11", "Keamanan", R.drawable.tema11));
+        tema.add(new TemaPortofolioTM("Tema 12", "Entertaiment", R.drawable.tema12));
         return tema;
     }
 }
