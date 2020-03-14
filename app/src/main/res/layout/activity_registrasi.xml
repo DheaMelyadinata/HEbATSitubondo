@@ -9,9 +9,9 @@
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="195dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:layout_marginTop="195dp"
         android:background="#FFFFFF"
         android:elevation="4dp"
         android:orientation="vertical"
@@ -76,19 +76,11 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="22dp"
                 style="@style/loginButton"
-                android:text="Daftar"
+                android:text="Register"
                 android:textAllCaps="false"
                 android:textColor="#fff"
                 android:textSize="18sp"
                 android:onClick="Register"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:paddingTop="5dp"
-                android:text="Sudah punya akun? Klik di sini."
-                android:textColor="#00ADC1" />
 
         </LinearLayout>
     </RelativeLayout>

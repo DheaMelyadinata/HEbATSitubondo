@@ -23,7 +23,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingTop="30dp">
+            android:paddingTop="20dp">
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -61,7 +61,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="22dp"
-                android:text="Masuk"
+                android:text="Log in"
                 style="@style/loginButton"
                 android:textAllCaps="false"
                 android:textColor="#fff"
@@ -72,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:paddingTop="5dp"
-                android:text="Belum punya akun? Klik 'Daftar' di bawah ini"
+                android:text="Didn't have account? Register now"
                 android:textColor="#00ADC1" />
 
             <Button
@@ -81,7 +81,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="22dp"
                 style="@style/loginButton"
-                android:text="Daftar"
+                android:text="Register"
                 android:textAllCaps="false"
                 android:textColor="#fff"
                 android:textSize="18sp"
