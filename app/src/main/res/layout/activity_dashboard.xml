@@ -5,34 +5,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/baground"
-    android:orientation="vertical"
     tools:context=".Dashboard">
-    
-    <com.synnapps.carouselview.CarouselView
-        android:layout_width="match_parent"
-        android:layout_height="230dp"
-        app:pageColor="#00000000"
-        app:fillColor="#FFFFFFFF"
-        app:slideInterval="3000"
-        app:radius="6dp"
-        app:strokeColor="#778899"
-        app:strokeWidth="1dp"
-        android:id="@+id/carousel">
-    </com.synnapps.carouselview.CarouselView>
 
     <LinearLayout
-        android:layout_marginTop="250dp"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <com.synnapps.carouselview.CarouselView
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            app:pageColor="#00000000"
+            app:fillColor="#FFFFFFFF"
+            app:slideInterval="3000"
+            app:radius="6dp"
+            app:strokeColor="#778899"
+            app:strokeWidth="1dp"
+            android:id="@+id/carousel">
+        </com.synnapps.carouselview.CarouselView>
 
         <!--layout button atas-->
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="25dp">
+            android:layout_marginTop="10pt">
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -138,9 +143,9 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="10pt"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -248,7 +253,24 @@
                     </RelativeLayout>
                 </LinearLayout>
             </LinearLayout>
-
         </LinearLayout>
     </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_navigation"
+        android:animateLayoutChanges="true">
+    </FrameLayout>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_navigation"
+        android:background="?android:attr/windowBackground"/>
+
 </RelativeLayout>
