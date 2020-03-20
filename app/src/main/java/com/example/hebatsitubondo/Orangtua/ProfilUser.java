@@ -1,13 +1,15 @@
-package com.example.hebatsitubondo;
+package com.example.hebatsitubondo.Orangtua;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class KontakKami extends AppCompatActivity {
+import com.example.hebatsitubondo.R;
+
+public class ProfilUser extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_kontak_kami);
+        setContentView(R.layout.activity_profil_user);
     }
 }

@@ -1,28 +1,29 @@
-package com.example.hebatsitubondo;
+package com.example.hebatsitubondo.Orangtua;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.example.hebatsitubondo.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class AgendaKegiatan extends AppCompatActivity {
+public class DokumentasiKegiatan extends AppCompatActivity {
     private RecyclerView recyclerView;
-    private RecyclerViewAdaptorAK adaptor;
+    private RecyclerViewAdaptorK adaptor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_agenda_kegiatan);
-
-    recyclerView=(RecyclerView) findViewById(R.id.recycleAKegiatan);
+        setContentView(R.layout.activity_dokumentasi_kegiatan);
+        recyclerView=(RecyclerView) findViewById(R.id.recycleDokumentasi);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-    adaptor=new RecyclerViewAdaptorAK(kegiatanTMList());
+        adaptor=new RecyclerViewAdaptorK(kegiatanTMList());
         recyclerView.setAdapter(adaptor);
-}
+    }
 
     public List<AgendaKegiatanTM> kegiatanTMList(){
         List<AgendaKegiatanTM> kegiatan = new ArrayList<>();

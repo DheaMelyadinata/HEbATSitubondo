@@ -1,15 +1,13 @@
-package com.example.hebatsitubondo;
+package com.example.hebatsitubondo.Orangtua;
 
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.hebatsitubondo.R;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageClickListener;
 import com.synnapps.carouselview.ImageListener;
@@ -85,8 +83,15 @@ public class Dashboard extends AppCompatActivity {
         Intent intent = new Intent(Dashboard.this, AgendaKegiatan.class);
         startActivity(intent);
     }
+
+    public void Dokumentasi(View view) {
+        Intent intent = new Intent(Dashboard.this, DokumentasiKegiatan.class);
+        startActivity(intent);
+    }
+
     public void Kontak(View view) {
         Intent intent = new Intent(Dashboard.this, KontakKami.class);
         startActivity(intent);
     }
+
 }
