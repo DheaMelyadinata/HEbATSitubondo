@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".AgendaKegiatan">
+    tools:context=".Orangtua.AgendaKegiatan">
 
     <include layout="@layout/title_agenda_kegiatan" />
 

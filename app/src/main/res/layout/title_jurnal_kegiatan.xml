@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Jurnal Kegiatan"
-        android:drawableLeft="@drawable/ic_event_note_black2_24dp"
+        android:drawableLeft="@drawable/ic_book_black2_24dp"
         android:drawablePadding="10dp"
         android:padding="12dp"
         android:gravity="fill_vertical"
