@@ -90,7 +90,7 @@ public class Dashboard extends AppCompatActivity {
     }
 
     public void Kontak(View view) {
-        Intent intent = new Intent(Dashboard.this, KontakKami.class);
+        Intent intent = new Intent(Dashboard.this, ProfilUser.class);
         startActivity(intent);
     }
 

@@ -1,43 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/baground"
-    tools:context=".Dashboard">
+    android:weightSum="3"
+    android:orientation="vertical"
+    tools:context=".Orangtua.Dashboard">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:orientation="vertical">
-
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical">
-
-        <com.synnapps.carouselview.CarouselView
+        android:layout_weight="1">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="230dp"
-            app:pageColor="#00000000"
-            app:fillColor="#FFFFFFFF"
-            app:slideInterval="3000"
-            app:radius="6dp"
-            app:strokeColor="#778899"
-            app:strokeWidth="1dp"
-            android:id="@+id/carousel">
-        </com.synnapps.carouselview.CarouselView>
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="0">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <com.synnapps.carouselview.CarouselView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                app:pageColor="#00000000"
+                app:fillColor="#FFFFFFFF"
+                app:slideInterval="3000"
+                app:radius="6dp"
+                app:strokeColor="#778899"
+                app:strokeWidth="1dp"
+                android:id="@+id/carousel">
+            </com.synnapps.carouselview.CarouselView>
+        </RelativeLayout>
+        </LinearLayout>
 
         <!--layout button atas-->
 
         <LinearLayout
-            android:layout_width="fill_parent"
+            android:id="@+id/buttonatas"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:weightSum="3"
             android:orientation="horizontal"
-            android:layout_marginTop="10pt">
+            android:layout_marginTop="260dp">
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -53,7 +62,6 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
-
                         <Button
                             style="?android:attr/progressBarStyleHorizontal"
                             android:layout_width="110dp"
@@ -144,134 +152,136 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="fill_parent"
+            android:id="@+id/buttonbawah"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10pt"
-            android:orientation="horizontal">
+            android:layout_below="@id/buttonatas"
+            android:layout_weight="1"
+            android:weightSum="3"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical">
+                    android:layout_height="match_parent">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <Button
-                            style="?android:attr/progressBarStyleHorizontal"
-                            android:layout_width="110dp"
-                            android:layout_height="110dp"
-                            android:layout_centerHorizontal="true"
-                            android:background="@drawable/custom_button"
-                            android:drawableTop="@drawable/ic_recent_actors_black_24dp"
-                            android:indeterminate="false"
-                            android:padding="13dp"
-                            android:text="Profil Identitas"
-                            android:textColor="#FFFFFF"
-                            android:textSize="10dp"
-                            android:textStyle="bold" />
-                    </RelativeLayout>
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <Button
-                            style="?android:attr/progressBarStyleHorizontal"
-                            android:layout_width="110dp"
-                            android:layout_height="110dp"
-                            android:layout_centerHorizontal="true"
-                            android:background="@drawable/custom_button"
-                            android:drawableTop="@drawable/ic_photo_library_black_24dp"
-                            android:indeterminate="false"
-                            android:padding="13dp"
-                            android:text="Dokumentasi Kegiatan"
-                            android:textColor="#FFFFFF"
-                            android:textSize="10dp"
-                            android:textStyle="bold" />
-                    </RelativeLayout>
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <Button
-                            style="?android:attr/progressBarStyleHorizontal"
-                            android:layout_width="110dp"
-                            android:layout_height="110dp"
-                            android:layout_centerHorizontal="true"
-                            android:background="@drawable/custom_button"
-                            android:drawableTop="@drawable/ic_people_black_24dp"
-                            android:indeterminate="false"
-                            android:onClick="Kontak"
-                            android:padding="13dp"
-                            android:text="Kontak Kami"
-                            android:textColor="#FFFFFF"
-                            android:textSize="10dp"
-                            android:textStyle="bold" />
-                    </RelativeLayout>
-                </LinearLayout>
+                    <Button
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/custom_button"
+                        android:drawableTop="@drawable/ic_recent_actors_black_24dp"
+                        android:indeterminate="false"
+                        android:padding="13dp"
+                        android:text="Profil Identitas"
+                        android:textColor="#FFFFFF"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
             </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
-    </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/bottom_navigation"
-        android:animateLayoutChanges="true">
-    </FrameLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        app:menu="@menu/bottom_navigation"
-        android:background="?android:attr/windowBackground"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
 
-</RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/custom_button"
+                        android:drawableTop="@drawable/ic_photo_library_black_24dp"
+                        android:indeterminate="false"
+                        android:padding="13dp"
+                        android:text="Dokumentasi Kegiatan"
+                        android:textColor="#FFFFFF"
+                        android:textSize="10dp"
+                        android:textStyle="bold"
+                        android:onClick="Dokumentasi"/>
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/custom_button"
+                        android:drawableTop="@drawable/ic_people_black_24dp"
+                        android:indeterminate="false"
+                        android:onClick="Kontak"
+                        android:padding="13dp"
+                        android:text="Kontak Kami"
+                        android:textColor="#FFFFFF"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+        </LinearLayout>
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottom_navigation"
+            android:animateLayoutChanges="true">
+        </FrameLayout>
+
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            app:menu="@menu/bottom_navigation"
+            android:background="?android:attr/windowBackground"/>
+    </RelativeLayout>
+</LinearLayout>
