@@ -84,6 +84,11 @@ public class Dashboard extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void ProfilIdentitas(View view) {
+        Intent intent = new Intent(Dashboard.this, ProfilIdentitas.class);
+        startActivity(intent);
+    }
+
     public void Dokumentasi(View view) {
         Intent intent = new Intent(Dashboard.this, DokumentasiKegiatan.class);
         startActivity(intent);

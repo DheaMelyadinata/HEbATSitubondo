@@ -191,7 +191,8 @@
                         android:text="Profil Identitas"
                         android:textColor="#FFFFFF"
                         android:textSize="10dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:onClick="ProfilIdentitas"/>
                 </RelativeLayout>
             </LinearLayout>
         </LinearLayout>
