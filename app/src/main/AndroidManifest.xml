@@ -2,15 +2,78 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.hebatsitubondo">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/iconapk"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/iconapk"
+        android:screenOrientation="locked"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".Splashscreen"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <service
+            android:name=".Service.FCMService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".Orangtua.Dokumentasi_Detail" />
+        <activity android:name=".Admin.Update_dokumentasi" />
+        <activity android:name=".Admin.Update_tema" />
+        <activity android:name=".Orangtua.Update_user" />
+        <activity android:name=".Admin.Detail_Portofolio" />
+        <activity android:name=".Admin.Input_Agenda" />
+        <activity android:name=".Admin.Input_Dokumentasi" />
+        <activity android:name=".Admin.Data_Input_Portofolio" />
+        <activity android:name=".Admin.Update_kegiatan" />
+        <activity android:name=".Orangtua.Identitas_Keluarga_Lengkap" />
+        <activity android:name=".Orangtua.Portofolio_Anak" />
+        <activity android:name=".Admin.Profil_Admin" />
+        <activity android:name=".Admin.Story_Telling" />
+        <activity android:name=".Admin.Detail_Story_Telling" />
+        <activity android:name=".Admin.Tambah_Tema" />
+        <activity android:name=".Admin.Data_Input_Agenda_Kegiatan" />
+        <activity android:name=".Kalender" />
+        <activity android:name=".Admin.Data_Input_Dokumentasi" />
+        <activity android:name=".Orangtua.Portofolio_Detail" />
+        <activity android:name=".Admin.Data_Keluarga" />
+        <activity android:name=".Orangtua.Input_StoryTelling" />
+        <activity android:name=".Admin.Dashboard_Admin" />
+        <activity android:name=".Orangtua.AgendaKegiatan_Detail" />
+        <activity
+            android:name=".Orangtua.Akun_Profile"
+            android:parentActivityName=".Orangtua.Dashboard" />
+        <activity
+            android:name=".Orangtua.Kontak_Komunitas"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Orangtua.Dokumentasi_Kegiatan" />
+        <activity android:name=".Orangtua.Identitas_Keluarga" />
+        <activity android:name=".Orangtua.AgendaKegiatan" />
+        <activity android:name=".Orangtua.Jurnal_Kegiatan" />
+        <activity android:name=".Orangtua.Portofolio" />
+        <activity android:name=".Orangtua.Dashboard" />
+        <activity
+            android:name=".Registrasi"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Login"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Splashscreen"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,6 +81,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+
+
     </application>
 
 </manifest>
