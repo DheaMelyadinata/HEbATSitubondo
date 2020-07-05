@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "454645660190",
+    "firebase_url": "https://hebatsitubondo.firebaseio.com",
+    "project_id": "hebatsitubondo",
+    "storage_bucket": "hebatsitubondo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:454645660190:android:d3204efe9f791de1a50c0f",
+        "android_client_info": {
+          "package_name": "com.example.hebatsitubondo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "454645660190-dovoa2s1lib09i8bb8m5ok8fu9h2d2e7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hebatsitubondo",
+            "certificate_hash": "20268650e7c60985bb03fdd1d04ea29d124e4cf4"
+          }
+        },
+        {
+          "client_id": "454645660190-r67bv9s5f1j7i9mg7e8pdfusoh45km2s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDutz8CUU-r_U8YugbOS0iBCcEb3Dsr1lw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "454645660190-r67bv9s5f1j7i9mg7e8pdfusoh45km2s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
