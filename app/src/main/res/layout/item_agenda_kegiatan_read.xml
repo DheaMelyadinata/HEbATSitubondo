@@ -16,27 +16,36 @@
             android:background="@color/colorCard"
             android:orientation="horizontal">
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorCard"
+            android:orientation="vertical">
+
             <ImageView
-                android:id="@+id/imgTema"
-                android:layout_width="275dp"
-                android:layout_height="90dp"
+                android:id="@+id/read_imgKegiatan"
+                android:layout_width="150dp"
+                android:layout_height="200dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/tema1" />
+                app:srcCompat="@drawable/kegiatan1" />
+
+        </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
+                android:layout_gravity="center_vertical"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tvTema"
+                    android:id="@+id/read_tvJenis_Kegiatan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -45,22 +54,39 @@
                     android:text="TextView"
                     android:textSize="18dp"
                     android:textStyle="bold" />
-
                 <TextView
-                    android:id="@+id/tvdeskripsiTema"
+                    android:id="@+id/read_tvNama_Kegiatan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="#000000"
                     android:textSize="14dp"
                     android:text="TextView" />
-                    <Button
-                        android:id="@+id/btn_set_data"
-                        style="@style/Widget.AppCompat.Button.Colored"
-                        android:layout_width="140dp"
-                        android:layout_height="10dp"
-                        android:layout_weight="1"
-                        android:text="Tampilkan Data"
-                        android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/read_tvWaktu_Kegiatan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="14dp"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/read_tvTempat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="14dp"
+                    android:text="TextView" />
+
+                <Button
+                    android:id="@+id/btn_set_detail_ak"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:text="Lihat Detail"
+                    android:textSize="12sp" />
+
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>

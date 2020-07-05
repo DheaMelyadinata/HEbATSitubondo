@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".Admin.Detail_Story_Telling">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_detail_storytelling"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
+        android:background="@color/colorCard"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_namaanak_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:background="@color/graylight"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/colorTitle"
+            android:shadowColor="@color/colorTitle"
+            android:fontFamily="sans-serif-condensed"
+            android:text="TextView"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="10dp"
+            android:paddingLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="@dimen/activity_vertical_margin">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:textColor="#000000"
+                android:textSize="16dp"
+                android:paddingLeft="25dp"
+                style="@style/TextSpec.Field"
+                android:textStyle="bold"
+                android:text="Tema :" />
+
+            <TextView
+                android:id="@+id/txt_temastory_detail"
+                style="@style/TextSpec.Value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                android:textColor="@android:color/black"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:textColor="#000000"
+                android:textSize="16dp"
+                android:paddingLeft="25dp"
+                style="@style/TextSpec.Field"
+                android:textStyle="bold"
+                android:text="Judul :" />
+
+            <TextView
+                android:id="@+id/txt_judultema_detail"
+                style="@style/TextSpec.Value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                android:textColor="@android:color/black"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:textColor="#000000"
+                android:textSize="16dp"
+                android:paddingLeft="25dp"
+                style="@style/TextSpec.Field"
+                android:textStyle="bold"
+                android:text="Ceritaku :" />
+
+            <TextView
+                android:id="@+id/txt_cerita_detail"
+                style="@style/TextSpec.Value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                android:textColor="@android:color/black"/>
+        </TableRow>
+        </TableLayout>
+    </LinearLayout>
+    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

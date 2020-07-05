@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Admin.Update_dokumentasi">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tupdate_dokumentasi"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="55dp">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="55dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical"
+            android:padding="15dp"
+            android:background="@color/colorPrimaryDark"
+            android:id="@+id/relativeLayout2">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Update Dokumentasi Kegiatan"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:shadowColor="#FFFFFF"
+                    android:fontFamily="sans-serif-condensed"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="45dp">
+
+                <EditText
+                    android:id="@+id/update_kegiatan_dokumentasi"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input_text_form"
+                    android:layout_marginBottom="8dp"
+                    android:hint="Nama Kegiatan"
+                    android:inputType="textPersonName"
+                    android:textSize="14dp"
+                    android:textColor="#000000"
+                    android:textColorHint="@color/colorSubTitle" />
+
+                <EditText
+                    android:id="@+id/txt_update_deskripsi"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input_text_form"
+                    android:hint="Deskripsi Kegiatan"
+                    android:inputType="textMultiLine"
+                    android:minLines="3"
+                    android:textSize="14dp"
+                    android:textColor="#000000"
+                    android:textColorHint="@color/colorSubTitle" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp">
+
+                    <ImageButton
+                        android:id="@+id/update_image_dokumentasi"
+                        android:background="@drawable/ic_file_upload_black_24dp"
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="5dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="1"
+                        android:textStyle="bold"
+                        android:gravity="left"
+                        android:text="Upload Foto Kegiatan"
+                        android:textSize="14dp"
+                        android:textColor="#FFFFFF"
+                        android:shadowColor="#FFFFFF" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:id="@+id/update_imageview_dokumentasi"
+                    android:background="@color/graylight"
+                    android:layout_gravity="center"
+                    android:padding="4dp"/>
+
+                <Button
+                    android:id="@+id/update_dokumentasi"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="22dp"
+                    style="@style/loginButton"
+                    android:text="Simpan"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="18sp"/>
+
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

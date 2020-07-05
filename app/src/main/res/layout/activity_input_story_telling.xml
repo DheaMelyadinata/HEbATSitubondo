@@ -5,38 +5,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Admin.StoryTelling">
+    android:background="@drawable/baground"
+    tools:context=".Orangtua.Input_StoryTelling">
 
-    <android.support.design.widget.AppBarLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar2"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary"
-        app:popupTheme="@style/AppTheme.PopupOverlay" />
-    </android.support.design.widget.AppBarLayout>
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar2"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="75dp"
         android:orientation="vertical">
+
         <TextView
-        android:id="@+id/inputdokumentasi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="STORY TELLING"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:textColor="@color/colorTitle"
-        android:shadowColor="@color/colorTitle"
-        android:fontFamily="sans-serif-condensed"/>
+            android:id="@+id/inputdokumentasi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="STORY TELLING"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:shadowColor="@color/graylight"
+            android:fontFamily="sans-serif-condensed"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -44,47 +48,57 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="Ayo Ceritakan Pengalamanmu disini ..)"
-            android:textSize="16dp"
-            android:textColor="#808080"
+            android:textSize="18dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="20dp"
             android:shadowColor="@color/graylight"
             android:fontFamily="sans-serif-condensed"/>
     </LinearLayout>
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical">
-    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tema  :  "
-            android:layout_marginTop="135dp"
-            android:paddingLeft="15dp"
-            android:textColor="#000000"/>
-        <EditText
-            android:id="@+id/tvTema"
-            android:layout_width="270dp"
-            android:layout_height="wrap_content"
-            android:paddingRight="15dp"
-            android:layout_marginTop="135dp"
-            android:text="" />
-    </LinearLayout>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="135dp"
+                android:paddingLeft="15dp"
+                android:text="Tema  :  "
+                android:textColor="#FFFFFF" />
+
+            <EditText
+                android:id="@+id/Tema_Select"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="135dp"
+                android:background="@drawable/input_text_form"
+                android:paddingRight="15dp"
+                android:text=""
+                android:textSize="14dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nama  :  "
                 android:paddingLeft="15dp"
-                android:textColor="#000000"/>
+                android:textColor="#FFFFFF"/>
             <EditText
                 android:id="@+id/namaanak"
                 android:layout_width="270dp"
+                android:textSize="14dp"
+                android:background="@drawable/input_text_form"
                 android:layout_height="wrap_content"
                 android:paddingRight="15dp"
                 android:text="" />
@@ -92,16 +106,19 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Judul   :  "
                 android:paddingLeft="15dp"
-                android:textColor="#000000"/>
+                android:textColor="#FFFFFF"/>
             <EditText
                 android:id="@+id/judultema"
                 android:layout_width="270dp"
+                android:textSize="14dp"
+                android:background="@drawable/input_text_form"
                 android:layout_height="wrap_content"
                 android:paddingRight="15dp"
                 android:text="" />
@@ -110,37 +127,32 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:text="Ceritaku :"
             android:gravity="center"
             android:layout_marginTop="15dp"
             android:layout_marginStart="16dp"/>
         <EditText
+            android:id="@+id/txt_cerita"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginRight="25dp"
-            android:layout_marginLeft="15dp"/>
+            android:textSize="14dp"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/input_text_form"
+            android:inputType="textMultiLine"
+            android:minLines="5"/>
     </LinearLayout>
     <Button
-        android:layout_marginTop="375dp"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/tombolsimpan"
-        android:text="Simpan"
-        android:background="@color/colorAccent"
-        android:textStyle="bold"
-        android:textColor="#ffffff"
-        android:paddingStart="16dp"/>
-    <TextView
         android:layout_marginTop="440dp"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="Status Data :"
-        android:textColor="#000000"
-        android:paddingLeft="16dp"
-        android:id="@+id/statusdata"
-        android:textSize="14dp" />
+        android:layout_centerHorizontal="true"
+        android:id="@+id/simpantema"
+        android:text="Simpan"
+        android:background="@color/colorPrimary"
+        android:textStyle="bold"
+        android:textColor="#ffffff" />
+
 </RelativeLayout>

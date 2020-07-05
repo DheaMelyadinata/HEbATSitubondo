@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Orangtua.KontakKami"
+    tools:context=".Orangtua.Kontak_Komunitas"
     android:background="@drawable/baground"
     android:orientation="vertical">
 
@@ -32,12 +32,13 @@
                 android:textColor="@color/colorPrimary"
                 android:textStyle="bold"
                 android:textSize="20sp"/>
+
         </LinearLayout>
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:layout_width="320dp"
                 android:layout_height="100dp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="275dp">
+                android:layout_marginTop="271dp">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -104,7 +105,7 @@
                             android:textColor="@color/colorPrimary"/>
                     </LinearLayout>
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
     </RelativeLayout>
     <LinearLayout
         android:layout_width="360dp"
@@ -155,7 +156,7 @@
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:src="@drawable/ic_phone_android_black_24dp" />
+                android:src="@drawable/ic_phone_android_profil_24dp" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

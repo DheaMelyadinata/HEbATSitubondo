@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Orangtua.AgendaKegiatan">
+    tools:context=".Admin.Story_Telling">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar6"
+            android:id="@+id/toolbars"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
@@ -21,27 +21,36 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/title_agenda_kegiatan" />
+    <include layout="@layout/title_story_telling" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <RelativeLayout
+
             android:layout_width="match_parent"
-            android:layout_marginTop="135dp"
+            android:layout_marginTop="108dp"
             android:layout_height="match_parent">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycleAKegiatan_read"
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipedown"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                tools:listitem="@layout/item_agenda_kegiatan_read"/>
+                android:layout_height="match_parent"
+                android:layout_marginRight="13dp"
+                android:layout_marginLeft="13dp">
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycleStory_Telling"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    tools:listitem="@layout/item_story_telling"/>
+
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
         </RelativeLayout>
     </LinearLayout>
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

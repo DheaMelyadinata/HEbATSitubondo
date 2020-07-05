@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/baground"
+    tools:context=".Admin.Update_tema">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:elevation="4dp"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:id="@+id/relativeLayout">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="15dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="UPDATE DATA TEMA"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:shadowColor="#00ADC1"
+                    android:fontFamily="sans-serif-condensed"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="55dp">
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/id_tema"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:hint="id tema"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary" />
+
+                <EditText
+                    android:id="@+id/txt_update_tema"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:hint="Nama Tema"
+                    android:textSize="14dp"
+                    android:singleLine="true"
+                    android:background="@drawable/input_text_form"
+                    android:inputType="textPersonName"
+                    android:textColor="#000000"
+                    android:textColorHint="@color/colorSubTitle" />
+
+                <EditText
+                    android:id="@+id/txt_update_judultema"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input_text_form"
+                    android:layout_marginTop="10dp"
+                    android:hint="Judul Tema"
+                    android:textSize="14dp"
+                    android:singleLine="true"
+                    android:inputType="textPersonName"
+                    android:textColor="#000000"
+                    android:textColorHint="@color/colorSubTitle" />
+
+                <EditText
+                    android:id="@+id/txt_update_tujuan"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input_text_form"
+                    android:layout_marginTop="10dp"
+                    android:hint="Tujuan"
+                    android:textSize="14dp"
+                    android:inputType="textMultiLine"
+                    android:minLines="3"
+                    android:textColor="#000000"
+                    android:textColorHint="@color/colorSubTitle" />
+
+                <EditText
+                    android:id="@+id/txt_update_kegiatan"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input_text_form"
+                    android:layout_marginTop="10dp"
+                    android:hint="Kegiatan"
+                    android:textSize="14dp"
+                    android:inputType="textMultiLine"
+                    android:minLines="3"
+                    android:textColor="#000000"
+                    android:textColorHint="@color/colorSubTitle" />
+
+                <EditText
+                    android:id="@+id/txt_update_catatan"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input_text_form"
+                    android:layout_marginTop="10dp"
+                    android:hint="Catatan"
+                    android:textSize="14dp"
+                    android:inputType="textMultiLine"
+                    android:minLines="3"
+                    android:textColor="#000000"
+                    android:textColorHint="@color/colorSubTitle" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+
+                    <ImageButton
+                        android:id="@+id/update_imagebutton_tema"
+                        android:background="@drawable/ic_file_upload_black_24dp"
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="5dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="1"
+                        android:textStyle="bold"
+                        android:gravity="left"
+                        android:text="Upload Gambar Tema"
+                        android:textSize="14dp"
+                        android:textColor="#FFFFFF"
+                        android:shadowColor="#00ADC1" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:id="@+id/update_imageview_tema"
+                    android:layout_gravity="center"
+                    android:background="@color/graylight"
+                    android:padding="4dp"/>
+
+                <Button
+                    android:id="@+id/update_tema"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="22dp"
+                    style="@style/loginButton"
+                    android:text="Simpan"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="18sp"/>
+
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/baground"
-    tools:context=".Admin.DashboardAdmin">
+    android:background="@drawable/baground2"
+    tools:context=".Admin.Dashboard_Admin">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,64 +13,66 @@
         android:layout_centerHorizontal="true"
         android:orientation="vertical">
 
-    <android.support.v4.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <!--layout button atas-->
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:weightSum="3"
-        android:layout_marginTop="154pt"
-        android:orientation="horizontal">
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
                 android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal"
                     android:orientation="vertical">
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
 
-                        <Button
-                            style="?android:attr/progressBarStyleHorizontal"
-                            android:layout_width="110dp"
-                            android:layout_height="110dp"
-                            android:layout_centerHorizontal="true"
-                            android:background="@drawable/custom_button2"
-                            android:drawableTop="@drawable/ic_book_black_24dp"
-                            android:indeterminate="false"
-                            android:padding="5dp"
-                            android:text="Data Portofolio Talent Mapping"
-                            android:textColor="#FFFFFF"
-                            android:textSize="10dp"
-                            android:textStyle="bold"
-                            android:onClick="DataPortofolio"/>
-                    </RelativeLayout>
-                </LinearLayout>
-            </LinearLayout>
+                    <!--layout button atas-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="154pt"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <Button
+                                        style="?android:attr/progressBarStyleHorizontal"
+                                        android:layout_width="110dp"
+                                        android:layout_height="110dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:background="@drawable/custom_button2"
+                                        android:drawableTop="@drawable/ic_book_black2_24dp"
+                                        android:indeterminate="false"
+                                        android:onClick="DataPortofolio"
+                                        android:padding="5dp"
+                                        android:text="Data Portofolio Talent Mapping"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="10dp"
+                                        android:textStyle="bold" />
+                                </RelativeLayout>
+                            </LinearLayout>
+                        </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -89,20 +91,21 @@
                                 <RelativeLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent">
+
                                     <Button
                                         style="?android:attr/progressBarStyleHorizontal"
                                         android:layout_width="110dp"
                                         android:layout_height="110dp"
                                         android:layout_centerHorizontal="true"
                                         android:background="@drawable/custom_button2"
-                                        android:drawableTop="@drawable/ic_import_contacts_black_24dp"
+                                        android:drawableTop="@drawable/ic_import_contacts_black2_24dp"
                                         android:indeterminate="false"
+                                        android:onClick="StoryTelling"
                                         android:padding="13dp"
                                         android:text="Story Telling Anak"
-                                        android:textSize="10dp"
                                         android:textColor="#FFFFFF"
-                                        android:textStyle="bold"
-                                        android:onClick="StoryTelling"/>
+                                        android:textSize="10dp"
+                                        android:textStyle="bold" />
                                 </RelativeLayout>
                             </LinearLayout>
                         </LinearLayout>
@@ -120,6 +123,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal"
                                 android:orientation="vertical">
+
                                 <RelativeLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent">
@@ -130,25 +134,25 @@
                                         android:layout_height="110dp"
                                         android:layout_centerHorizontal="true"
                                         android:background="@drawable/custom_button2"
-                                        android:drawableTop="@drawable/ic_event_note_black_24dp"
+                                        android:drawableTop="@drawable/ic_event_note_black2_24dp"
                                         android:indeterminate="false"
+                                        android:onClick="DataKeluarga"
                                         android:padding="13dp"
                                         android:text="Data Keluarga"
                                         android:textColor="#FFFFFF"
                                         android:textSize="10dp"
-                                        android:textStyle="bold"
-                                        android:onClick="DataKeluarga"/>
+                                        android:textStyle="bold" />
                                 </RelativeLayout>
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10pt"
-        android:layout_weight="1"
-        android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10pt"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -160,8 +164,8 @@
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:layout_marginRight="45dp"
+                                android:layout_weight="1"
                                 android:gravity="right"
                                 android:orientation="vertical">
 
@@ -175,14 +179,14 @@
                                         android:layout_height="110dp"
                                         android:layout_centerHorizontal="true"
                                         android:background="@drawable/custom_button2"
-                                        android:drawableTop="@drawable/ic_photo_library_black_24dp"
+                                        android:drawableTop="@drawable/ic_photo_library_black2_24dp"
                                         android:indeterminate="false"
+                                        android:onClick="UploadDokumentasi"
                                         android:padding="13dp"
                                         android:text="Dokumentasi Kegiatan"
                                         android:textColor="#FFFFFF"
                                         android:textSize="10dp"
-                                        android:textStyle="bold"
-                                        android:onClick="UploadDokumentasi"/>
+                                        android:textStyle="bold" />
                                 </RelativeLayout>
                             </LinearLayout>
                         </LinearLayout>
@@ -211,7 +215,7 @@
                                         android:layout_height="110dp"
                                         android:layout_centerHorizontal="true"
                                         android:background="@drawable/custom_button2"
-                                        android:drawableTop="@drawable/ic_recent_actors_black_24dp"
+                                        android:drawableTop="@drawable/ic_recent_actors_black_242dp"
                                         android:indeterminate="false"
                                         android:onClick="UploadAgenda"
                                         android:padding="13dp"
@@ -222,25 +226,25 @@
                                 </RelativeLayout>
                             </LinearLayout>
                         </LinearLayout>
-    </LinearLayout>
+                    </LinearLayout>
 
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
     </LinearLayout>
-    </LinearLayout>
-    </android.support.v4.widget.NestedScrollView>
-    </LinearLayout>
-    <android.support.design.widget.AppBarLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
-        <android.support.v7.widget.Toolbar
+        <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-    </android.support.design.widget.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_dashboard" />
 
@@ -252,8 +256,8 @@
         android:animateLayoutChanges="true">
     </FrameLayout>
 
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bottom_navigation"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_admin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

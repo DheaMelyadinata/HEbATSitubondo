@@ -1,94 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Admin.DataInputDokumentasi">
+    tools:context=".Admin.Data_Input_Dokumentasi">
 
-    <android.support.design.widget.AppBarLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar2"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar4"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-    </android.support.design.widget.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/title_dokumentasi_kegiatan" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="135dp"
         android:orientation="vertical">
-        <TextView
-            android:id="@+id/inputdokumentasi"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingLeft="15dp"
-            android:text="Input Dokumentasi Kegiatan"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@color/colorTitle"
-            android:shadowColor="@color/colorTitle"
-            android:fontFamily="sans-serif-condensed"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="170dp"
-        android:orientation="vertical">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingRight="200dp"
-        android:paddingLeft="15dp"
-        android:text="Upload Gambar : "
-        android:layout_marginStart="2dp"
-        android:gravity="center_vertical"
-        android:textColor="#000000"
-        android:drawableRight="@drawable/ic_cloud_upload_black_24dp"/>
-        <ImageView
-            android:id="@+id/uploaddokumentasi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_cloud_upload_black_24dp"
-            android:paddingStart="50dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:text="Deskripsi Kegiatan :"
-            android:layout_marginTop="15dp"
-            android:layout_marginStart="16dp"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginLeft="15dp"/>
-    </LinearLayout>
-    <FrameLayout
-        android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/bottom_navigation"
-        android:animateLayoutChanges="true">
-    </FrameLayout>
+            android:layout_marginTop="135dp"
+            android:layout_height="match_parent">
 
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipedown"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="13dp"
+                android:layout_marginLeft="13dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycleDokumentasi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    tools:listitem="@layout/item_dokumentasi_kegiatan"/>
+
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        </RelativeLayout>
+    </LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        app:menu="@menu/bottom_navigation"
-        android:background="?android:attr/windowBackground"/>
-</RelativeLayout>
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@android:drawable/ic_input_add" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

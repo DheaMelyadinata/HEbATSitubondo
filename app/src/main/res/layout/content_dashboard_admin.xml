@@ -12,18 +12,14 @@
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/carouselView" />
+        android:layout_above="@id/ViewPagerImageSlider" />
 
-    <com.synnapps.carouselview.CarouselView
-        android:id="@+id/carouselView"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/ViewPagerImageSlider"
         android:layout_width="match_parent"
         android:layout_marginTop="55dp"
         android:layout_height="245dp"
-        app:fillColor="#FFFFFFFF"
-        app:pageColor="#00000000"
-        app:radius="6dp"
-        app:slideInterval="3000"
-        app:strokeColor="#FF777777"
-        app:strokeWidth="1dp"/>
+        android:paddingStart="40dp"
+        android:paddingEnd="40dp"/>
 
 </RelativeLayout>

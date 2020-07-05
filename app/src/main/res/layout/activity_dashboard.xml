@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/baground"
+    android:background="@drawable/baground2"
     tools:context=".Orangtua.Dashboard">
 
     <LinearLayout
@@ -13,7 +13,7 @@
         android:layout_centerHorizontal="true"
         android:orientation="vertical">
 
-    <android.support.v4.widget.NestedScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -60,11 +60,11 @@
                             android:layout_height="110dp"
                             android:layout_centerHorizontal="true"
                             android:background="@drawable/custom_button"
-                            android:drawableTop="@drawable/ic_import_contacts_black_24dp"
+                            android:drawableTop="@drawable/ic_import_contacts_black2_24dp"
                             android:indeterminate="false"
                             android:padding="5dp"
                             android:text="Portofolio Berbasis Talent Mapping"
-                            android:textColor="#FFFFFF"
+                            android:textColor="#F5F5F5"
                             android:textSize="10dp"
                             android:textStyle="bold"
                             android:onClick="Portofolio"/>
@@ -95,12 +95,12 @@
                             android:layout_height="110dp"
                             android:layout_centerHorizontal="true"
                             android:background="@drawable/custom_button"
-                            android:drawableTop="@drawable/ic_book_black_24dp"
+                            android:drawableTop="@drawable/ic_book_black2_24dp"
                             android:indeterminate="false"
                             android:padding="13dp"
                             android:text="Jurnal Kegiatan"
                             android:textSize="10dp"
-                            android:textColor="#FFFFFF"
+                            android:textColor="#F5F5F5"
                             android:textStyle="bold"
                             android:onClick="Akegiatan"/>
                     </RelativeLayout>
@@ -130,11 +130,11 @@
                             android:layout_height="110dp"
                             android:layout_centerHorizontal="true"
                             android:background="@drawable/custom_button"
-                            android:drawableTop="@drawable/ic_event_note_black_24dp"
+                            android:drawableTop="@drawable/ic_event_note_black2_24dp"
                             android:indeterminate="false"
                             android:padding="13dp"
                             android:text="Agenda Kegiatan"
-                            android:textColor="#FFFFFF"
+                            android:textColor="#F5F5F5"
                             android:textSize="10dp"
                             android:textStyle="bold"
                             android:onClick="AgendaKegiatan"/>
@@ -174,11 +174,11 @@
                         android:layout_height="110dp"
                         android:layout_centerHorizontal="true"
                         android:background="@drawable/custom_button"
-                        android:drawableTop="@drawable/ic_recent_actors_black_24dp"
+                        android:drawableTop="@drawable/ic_recent_actors_black_242dp"
                         android:indeterminate="false"
                         android:padding="13dp"
                         android:text="Profil Identitas"
-                        android:textColor="#FFFFFF"
+                        android:textColor="#F5F5F5"
                         android:textSize="10dp"
                         android:textStyle="bold"
                         android:onClick="ProfilIdentitas"/>
@@ -210,11 +210,11 @@
                         android:layout_height="110dp"
                         android:layout_centerHorizontal="true"
                         android:background="@drawable/custom_button"
-                        android:drawableTop="@drawable/ic_photo_library_black_24dp"
+                        android:drawableTop="@drawable/ic_photo_library_black2_24dp"
                         android:indeterminate="false"
                         android:padding="13dp"
                         android:text="Dokumentasi Kegiatan"
-                        android:textColor="#FFFFFF"
+                        android:textColor="#F5F5F5"
                         android:textSize="10dp"
                         android:textStyle="bold"
                         android:onClick="Dokumentasi"/>
@@ -246,12 +246,12 @@
                         android:layout_height="110dp"
                         android:layout_centerHorizontal="true"
                         android:background="@drawable/custom_button"
-                        android:drawableTop="@drawable/ic_people_black_24dp"
+                        android:drawableTop="@drawable/ic_person_black22_24dp"
                         android:indeterminate="false"
                         android:onClick="Kontak"
                         android:padding="13dp"
                         android:text="Kontak Kami"
-                        android:textColor="#FFFFFF"
+                        android:textColor="#F5F5F5"
                         android:textSize="10dp"
                         android:textStyle="bold" />
                 </RelativeLayout>
@@ -261,21 +261,21 @@
 
     </LinearLayout>
     </LinearLayout>
-    </android.support.v4.widget.NestedScrollView>
+    </androidx.core.widget.NestedScrollView>
     </LinearLayout>
-    <android.support.design.widget.AppBarLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
-        <android.support.v7.widget.Toolbar
+        <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-    </android.support.design.widget.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_dashboard" />
 
@@ -283,15 +283,16 @@
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@+id/bottom_navigation"
+            android:layout_above="@+id/navigasi"
             android:animateLayoutChanges="true">
         </FrameLayout>
 
-        <android.support.design.widget.BottomNavigationView
-            android:id="@+id/bottom_navigation"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/navigasi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
             app:menu="@menu/bottom_navigation"
             android:background="?android:attr/windowBackground"/>
 </RelativeLayout>
