@@ -1,5 +1,6 @@
 package com.example.hebatsitubondo.Orangtua;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -14,9 +15,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.hebatsitubondo.Admin.Model_Admin.Model_Kegiatan;
-import com.example.hebatsitubondo.Admin.Admin_Adapter.RecyclerViewAdaptorAK;
-import com.example.hebatsitubondo.Orangtua.Adapter.Adapter_AgendaKegiatan;
+import com.example.hebatsitubondo.Orangtua.Adapter.Adapter_JurnalKegiatan;
+import com.example.hebatsitubondo.Orangtua.Model.TemaPortofolioTM;
 import com.example.hebatsitubondo.R;
 
 import org.json.JSONArray;
@@ -26,25 +26,24 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AgendaKegiatan extends AppCompatActivity {
-
-    private String url_kegiatan = "http://192.168.43.62/API_HEbATSitubondo/public/kegiatan";
+public class Jurnal_Kegiatan extends AppCompatActivity {
+    private String url = "http://192.168.43.62/API_HEbATSitubondo/public/tema";
     private JsonArrayRequest ArrayRequest;
     private RequestQueue requestQueue;
-    private List<Model_Kegiatan> mData = new ArrayList<Model_Kegiatan>();
+    private List<TemaPortofolioTM> mData = new ArrayList<TemaPortofolioTM>();
     private RecyclerView myrv;
-    private Adapter_AgendaKegiatan adapter_agendaKegiatan;
+    private Adapter_JurnalKegiatan recyclerViewAdaptor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_agenda_kegiatan);
+        setContentView(R.layout.activity_jurnal_kegiatan);
 
-        Toolbar toolbar6 = (Toolbar)findViewById(R.id.toolbar6);
-        setSupportActionBar(toolbar6);
-        getSupportActionBar().setTitle("Agenda Kegiatan");
+        Toolbar toolbar3 = (Toolbar)findViewById(R.id.toolbar3);
+        setSupportActionBar(toolbar3);
+        getSupportActionBar().setTitle("Jurnal Kegiatan");
 
-        myrv = (RecyclerView) findViewById(R.id.recycleAKegiatan_read);
+        myrv = (RecyclerView) findViewById(R.id.recycleJKegiatan);
         myrv.setHasFixedSize(true);
         myrv.setLayoutManager(new LinearLayoutManager(this));
 
@@ -56,7 +55,7 @@ public class AgendaKegiatan extends AppCompatActivity {
 
     private void getData() {
 
-        ArrayRequest = new JsonArrayRequest(url_kegiatan, new Response.Listener<JSONArray>() {
+        ArrayRequest = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
                 JSONObject jsonObject = null;
@@ -64,19 +63,18 @@ public class AgendaKegiatan extends AppCompatActivity {
                     try {
 
                         jsonObject = response.getJSONObject(i);
-                        Model_Kegiatan modelKegiatan = new Model_Kegiatan();
-                        modelKegiatan.setJenisKegiatan(jsonObject.getString("jenis_kegiatan"));
-                        modelKegiatan.setNamaKegiatan(jsonObject.getString("nama_kegiatan"));
-                        modelKegiatan.setWaktu_kegiatan(jsonObject.getString("waktu_kegiatan"));
-                        modelKegiatan.setTempat(jsonObject.getString("tempat"));
-                        modelKegiatan.setPhotoKegiatan(jsonObject.getString("photo_kegiatan"));
-                        mData.add(modelKegiatan);
+                        TemaPortofolioTM temaPortofolioTM = new TemaPortofolioTM();
+                        temaPortofolioTM.setIdTema(jsonObject.getInt("id_tema"));
+                        temaPortofolioTM.setNamaTema(jsonObject.getString("nama_tema"));
+                        temaPortofolioTM.setJudulTema(jsonObject.getString("judul_tema"));
+                        temaPortofolioTM.setGambar_url(jsonObject.getString("gambar_tema"));
+                        mData.add(temaPortofolioTM);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
                 }
                 adapterPush(mData);
-                Toast.makeText(AgendaKegiatan.this, "Size of Liste " + String.valueOf(mData.size()), Toast.LENGTH_SHORT).show();
+                Toast.makeText(Jurnal_Kegiatan.this, "Size of Liste " + String.valueOf(mData.size()), Toast.LENGTH_SHORT).show();
             }
 
         }, new Response.ErrorListener() {
@@ -86,19 +84,19 @@ public class AgendaKegiatan extends AppCompatActivity {
             }
         });
 
-        requestQueue = Volley.newRequestQueue(AgendaKegiatan.this);
+        requestQueue = Volley.newRequestQueue(Jurnal_Kegiatan.this);
         requestQueue.add(ArrayRequest);
     }
 
-    private void adapterPush(List<Model_Kegiatan> mData) {
-        adapter_agendaKegiatan = new Adapter_AgendaKegiatan(this, mData);
+    private void adapterPush(List<TemaPortofolioTM> mData) {
+        recyclerViewAdaptor = new Adapter_JurnalKegiatan(this, mData);
         myrv.setLayoutManager(new LinearLayoutManager(this));
-        myrv.setAdapter(adapter_agendaKegiatan);
+        myrv.setAdapter(recyclerViewAdaptor);
     }
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(AgendaKegiatan.this, Dashboard.class);
+        Intent intent = new Intent(Jurnal_Kegiatan.this, Dashboard.class);
         startActivity(intent);
         super.onBackPressed();
     }

@@ -1,0 +1,290 @@
+package com.example.hebatsitubondo.Admin;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.Base64;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+import com.example.hebatsitubondo.R;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Update_tema extends AppCompatActivity implements View.OnClickListener {
+
+    Button update_tema;
+    ImageButton update_imagebutton_tema;
+    ImageView update_imageview_tema;
+    EditText txt_update_tema, txt_update_judultema, txt_update_tujuan, txt_update_kegiatan, txt_update_catatan;
+    private int getIdTema = 0;
+
+
+    ProgressDialog pDialog;
+    Bitmap bitmap, decoded;
+    int success;
+    int PICK_IMAGE_REQUEST = 1;
+    int bitmap_size = 40; // range 1 - 100
+
+    Intent intent;
+    Uri fileUri;
+    public final int REQUEST_CAMERA = 0;
+    public final int SELECT_FILE = 1;
+
+    int max_resolution_image = 800;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_update_tema);
+        update_tema = (Button) findViewById(R.id.update_tema);
+        txt_update_tema = (EditText) findViewById(R.id.txt_update_tema);
+        txt_update_judultema = (EditText) findViewById(R.id.txt_update_judultema);
+        txt_update_tujuan = (EditText) findViewById(R.id.txt_update_tujuan);
+        txt_update_kegiatan = (EditText) findViewById(R.id.txt_update_kegiatan);
+        txt_update_catatan = (EditText) findViewById(R.id.txt_update_catatan);
+        update_imagebutton_tema = (ImageButton) findViewById(R.id.update_imagebutton_tema);
+        update_imageview_tema = (ImageView) findViewById(R.id.update_imageview_tema);
+
+        update_tema.setOnClickListener(this);
+        update_imagebutton_tema.setOnClickListener(this);
+        update_imageview_tema.setOnClickListener(this);
+
+        Intent intent = getIntent();
+        getIdTema = intent.getIntExtra("id_tema",0);
+        String nama_tema = intent.getStringExtra("nama_tema");
+        String judul_tema = intent.getStringExtra("judul_tema");
+        String tujuan = intent.getStringExtra("tujuan");
+        String kegiatan = intent.getStringExtra("kegiatan");
+        String catatan = intent.getStringExtra("catatan");
+        String gambar_tema = intent.getStringExtra("gambar_tema");
+
+        Glide.with(this)
+                .load("http://192.168.43.62/API_HEbATSitubondo/public/"+ gambar_tema)
+                .apply(new RequestOptions().override(350, 550))
+                .into(update_imageview_tema);
+
+        txt_update_tema.setText(nama_tema);
+        txt_update_judultema.setText(judul_tema);
+        txt_update_tujuan.setText(tujuan);
+        txt_update_kegiatan.setText(kegiatan);
+        txt_update_catatan.setText(catatan);
+    }
+    public void onClick(View v) {
+        switch (v.getId()){
+
+            case R.id.update_tema:
+
+                String namaTema = txt_update_tema.getText().toString();
+                String judulTema = txt_update_judultema.getText().toString();
+                String tujuan = txt_update_tujuan.getText().toString();
+                String kegiatanTema = txt_update_kegiatan.getText().toString();
+                String catatan = txt_update_catatan.getText().toString();
+
+                if ( namaTema.trim().length() > 0 && judulTema.trim().length() > 0
+                        && tujuan.trim().length() > 0 && kegiatanTema.trim().length() > 0 && catatan.trim().length() > 0) {
+                    sendData(namaTema, judulTema, tujuan, kegiatanTema, catatan, String.valueOf(getIdTema));
+                } else {
+                    // Prompt user to enter credentials
+                    Toast.makeText(getApplicationContext(), "Field tidak boleh kosong", Toast.LENGTH_LONG).show();
+                }
+
+                break;
+
+            case R.id.update_imageview_tema:
+                pickImage();
+                break;
+        }
+    }
+
+    private void pickImage() {
+        update_imageview_tema.setImageResource(0);
+        final CharSequence[] items = {"Take Photo", "Choose from Library",
+                "Cancel"};
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(Update_tema.this);
+        builder.setTitle("Add Photo!");
+        builder.setIcon(R.mipmap.ic_launcher);
+        builder.setItems(items, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int item) {
+                if (items[item].equals("Take Photo")) {
+                    intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+//                    fileUri = getOutputMediaFileUri();
+                    intent.putExtra(android.provider.MediaStore.EXTRA_OUTPUT, fileUri);
+                    startActivityForResult(intent, REQUEST_CAMERA);
+                } else if (items[item].equals("Choose from Library")) {
+                    intent = new Intent();
+                    intent.setType("image/*");
+                    intent.setAction(Intent.ACTION_GET_CONTENT);
+                    startActivityForResult(Intent.createChooser(intent, "Select Picture"), SELECT_FILE);
+                } else if (items[item].equals("Cancel")) {
+                    dialog.dismiss();
+                }
+            }
+        });
+        builder.show();
+    }
+    private void kosong() {
+        update_imageview_tema.setImageResource(0);
+
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == REQUEST_CAMERA) {
+                try {
+                    Log.e("CAMERA", fileUri.getPath());
+
+                    bitmap = BitmapFactory.decodeFile(fileUri.getPath());
+                    setToImageView(getResizedBitmap(bitmap, max_resolution_image));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } else if (requestCode == SELECT_FILE && data != null && data.getData() != null) {
+                try {
+                    // mengambil gambar dari Gallery
+                    bitmap = MediaStore.Images.Media.getBitmap(Update_tema.this.getContentResolver(), data.getData());
+                    setToImageView(getResizedBitmap(bitmap, max_resolution_image));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public String getStringImage (Bitmap bmp){
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bmp.compress(Bitmap.CompressFormat.PNG, bitmap_size, baos);
+        byte[] imageBytes = baos.toByteArray();
+
+        String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
+        return encodedImage;
+    }
+
+    private void sendData ( final String namaTema, final String judulTema, final String tujuan,
+                           final String kegiatanTema, final String catatan, String idTema){
+        pDialog = new ProgressDialog(this);
+        pDialog.setCancelable(false);
+        pDialog.setMessage("Proses Menambahkan ...");
+        showDialog();
+        String URL = "http://192.168.43.62/API_HEbATSitubondo/public/tema/" + idTema + "/update";
+        StringRequest srSendData = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Intent intent = new Intent(Update_tema.this, Data_Input_Portofolio.class);
+                Toast.makeText(Update_tema.this, "Tema Berhasil Diubah", Toast.LENGTH_LONG).show();
+                kosong();
+                startActivity(intent);
+                finish();
+                hideDialog();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(Update_tema.this, "Maaf ada kesalahan mengubah Data Tema  ", Toast.LENGTH_LONG).show();
+                hideDialog();
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() {
+
+                Map<String, String> parameters = new HashMap<>();
+                parameters.put("nama_tema", namaTema);
+                parameters.put("judul_tema", judulTema);
+                parameters.put("tujuan", tujuan);
+                parameters.put("kegiatan", kegiatanTema);
+                parameters.put("catatan", catatan);
+                if( getStringImage(decoded) != null){
+                    parameters.put("gambar_tema", getStringImage(decoded));
+                }//jika gambarnya di ubah
+	            else{
+                    parameters.put("gambar_tema", "null");//jika tidak diubah
+                }
+                return parameters;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(Update_tema.this);
+        requestQueue.add(srSendData);
+    }
+
+    private String imgToString (Bitmap bitmap){
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
+
+        String encodeImage = null;
+        if (bitmap != null) {
+            byte[] imageByte = outputStream.toByteArray();
+            encodeImage = Base64.encodeToString(imageByte, Base64.DEFAULT);
+        }
+
+        return encodeImage;
+    }
+
+    private void setToImageView (Bitmap bmp){
+        //compress image
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        bmp.compress(Bitmap.CompressFormat.PNG, bitmap_size, bytes);
+        decoded = BitmapFactory.decodeStream(new ByteArrayInputStream(bytes.toByteArray()));
+
+        //menampilkan gambar yang dipilih dari camera/gallery ke ImageView
+        update_imageview_tema.setImageBitmap(decoded);
+    }
+
+    // fungsi resize image
+    public Bitmap getResizedBitmap (Bitmap image,int maxSize){
+        int width = image.getWidth();
+        int height = image.getHeight();
+
+        float bitmapRatio = (float) width / (float) height;
+        if (bitmapRatio > 1) {
+            width = maxSize;
+            height = (int) (width / bitmapRatio);
+        } else {
+            height = maxSize;
+            width = (int) (height * bitmapRatio);
+        }
+        return Bitmap.createScaledBitmap(image, width, height, true);
+    }
+
+
+    private void hideDialog() {
+        if (pDialog.isShowing())
+            pDialog.dismiss();
+    }
+
+    private void showDialog() {
+        if (!pDialog.isShowing())
+            pDialog.show();
+    }
+}

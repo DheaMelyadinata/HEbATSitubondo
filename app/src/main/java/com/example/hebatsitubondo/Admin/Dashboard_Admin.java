@@ -1,8 +1,13 @@
-package com.example.hebatsitubondo.Orangtua;
+package com.example.hebatsitubondo.Admin;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,13 +17,10 @@ import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
 
-import android.os.Bundle;
-import android.view.KeyEvent;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
-
+//import com.example.hebatsitubondo.Orangtua.Portofolio;
 import com.example.hebatsitubondo.Kalender;
+import com.example.hebatsitubondo.Orangtua.Akun_Profile;
+import com.example.hebatsitubondo.Orangtua.Dashboard;
 import com.example.hebatsitubondo.R;
 import com.example.hebatsitubondo.SliderAdapter;
 import com.example.hebatsitubondo.SliderItem;
@@ -27,39 +29,39 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Dashboard extends AppCompatActivity {
+public class Dashboard_Admin extends AppCompatActivity {
 
-    private BottomNavigationView navigasi;
+    private BottomNavigationView bottom_navigation_admin;
     private ViewPager2 viewPager2;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard);
+        setContentView(R.layout.activity_dashboard_admin);
 
-        navigasi = (BottomNavigationView) findViewById(R.id.navigasi);
+        bottom_navigation_admin = (BottomNavigationView) findViewById(R.id.bottom_navigation_admin);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         //Memberikan listener saat menu item di bottom navigation diklik
-        navigasi.setOnNavigationItemSelectedListener( new BottomNavigationView.OnNavigationItemSelectedListener() {
+        bottom_navigation_admin.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
                 switch (id) {
                     case R.id.nav_home:
-                        Toast.makeText(Dashboard.this, "Anda sedang berada di beranda", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Dashboard_Admin.this, "Anda sedang berada di beranda", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.nav_kalender:
-                        Toast.makeText(Dashboard.this, "Kalender clicked", Toast.LENGTH_SHORT).show();
-                        Intent intent2 = new Intent(Dashboard.this, Kalender.class);
+                        Toast.makeText(Dashboard_Admin.this, "Kalender clicked", Toast.LENGTH_SHORT).show();
+                        Intent intent2 = new Intent(Dashboard_Admin.this, Kalender.class);
                         startActivity(intent2);
                         break;
                     case R.id.nav_akun:
-                        Toast.makeText(Dashboard.this, "Akun clicked", Toast.LENGTH_SHORT).show();
-                        Intent intent3 = new Intent(Dashboard.this, Akun_Profile.class);
+                        Toast.makeText(Dashboard_Admin.this, "Akun clicked", Toast.LENGTH_SHORT).show();
+                        Intent intent3 = new Intent(Dashboard_Admin.this, Profil_Admin.class);
                         startActivity(intent3);
                         break;
                 }
@@ -79,7 +81,6 @@ public class Dashboard extends AppCompatActivity {
 
         viewPager2.setAdapter(new SliderAdapter(sliderItems, viewPager2));
 
-
         viewPager2.setClipToPadding(false);
         viewPager2.setClipChildren(false);
         viewPager2.setOffscreenPageLimit(3);
@@ -98,33 +99,28 @@ public class Dashboard extends AppCompatActivity {
         viewPager2.setPageTransformer(compositePageTransformer);
     }
 
-    public void AgendaKegiatan(View view) {
-        Intent intent = new Intent(Dashboard.this, AgendaKegiatan.class);
+    public void StoryTelling(View view) {
+        Intent intent = new Intent(Dashboard_Admin.this, Story_Telling.class);
         startActivity(intent);
     }
 
-    public void ProfilIdentitas(View view) {
-        Intent intent = new Intent(Dashboard.this, Identitas_Keluarga.class);
+    public void DataKeluarga(View view) {
+        Intent intent = new Intent(Dashboard_Admin.this, Data_Keluarga.class);
         startActivity(intent);
     }
 
-    public void Dokumentasi(View view) {
-        Intent intent = new Intent(Dashboard.this, Dokumentasi_Kegiatan.class);
+    public void UploadDokumentasi(View view) {
+        Intent intent = new Intent(Dashboard_Admin.this, Data_Input_Dokumentasi.class);
         startActivity(intent);
     }
 
-    public void Kontak(View view) {
-        Intent intent = new Intent(Dashboard.this, Kontak_Komunitas.class);
+    public void UploadAgenda(View view) {
+        Intent intent = new Intent(Dashboard_Admin.this, Data_Input_Agenda_Kegiatan.class);
         startActivity(intent);
     }
 
-    public void Akegiatan(View view) {
-        Intent intent = new Intent(Dashboard.this, Jurnal_Kegiatan.class);
-        startActivity(intent);
-    }
-
-    public void Portofolio(View view) {
-        Intent intent = new Intent(Dashboard.this, Portofolio.class);
+    public void DataPortofolio(View view) {
+        Intent intent = new Intent(Dashboard_Admin.this, Data_Input_Portofolio.class);
         startActivity(intent);
     }
 
