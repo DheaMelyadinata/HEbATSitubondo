@@ -3,4 +3,24 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="colorSubTitle">#757575</color>
+    <color name="whiteTextColor">#fff</color>
+
+    <!--color for profil user-->
+    <color name="cP">#292b3d</color>
+    <color name="graylight">#fafafa</color>
+    <color name="startblue">#09c6df</color>
+    <color name="endblue">#0bcce6</color>
+
+    <!--color for portofolio berbasis TM-->
+    <color name="colorTitle">#996600</color>
+    <color name="colorCard">#FFCC00</color>
+    <color name="colorNavigation">#ffbb33</color>
+    <color name="dialog_choose_icon_color">#757575</color>
+
+    <color name="list_divider">#d9d9d9</color>
+    <color name="list_row_start_color">#ffffff</color>
+    <color name="list_row_end_color">#ffffff</color>
+    <color name="list_row_hover_start_color">#ebeef0</color>
+    <color name="list_row_hover_end_color">#ebeef0</color>
 </resources>
