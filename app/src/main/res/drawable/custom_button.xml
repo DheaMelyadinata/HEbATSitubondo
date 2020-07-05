@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <solid android:color="#BDB76B"/>
-    <corners android:radius="25dp"/>
-
-</shape>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<item>
+    <shape android:shape="rectangle">
+        <!--apply button background transparent, full opacity-->
+        <solid android:color="#00ffffff"/>
+        <!--make button border solid color, nontransparent-->
+        <stroke android:color="#6B8E23"
+            android:width="5dp"/>
+        <corners android:radius="25dp"/>
+    </shape>
+</item>
+</selector>
